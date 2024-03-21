@@ -39,3 +39,9 @@ exercises.c:87:12: error: assignment to ‘int’ from ‘void *’ makes intege
 cc1: all warnings being treated as errors
 Compilation failed
 f67ea57
+Thu 21 Mar 2024 09:12:05 PM UTC: 
+ exercises.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+ tests:  2|3
+total_score: 20/70
+013797d
