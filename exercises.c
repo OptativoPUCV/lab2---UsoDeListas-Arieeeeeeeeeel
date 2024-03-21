@@ -6,6 +6,7 @@
 #include "arraylist.h"
 #include "stack.h"
 
+
 //#include "exercises.h"
 
 //Funciones auxiliares que puedes utilizar para debuggear tus ejercicios
@@ -43,6 +44,14 @@ Al finalizar retorna la lista creada.
 
 List* crea_lista() {
    List* L = create_list();
+    for (i = 0; i <= 10; i++){
+      int* elemento = (int*)malloc(sizeof(int));
+      if(elemento == NULL){
+        exit(EXIT_FAILURE);
+      }
+      *elemento = i;
+      push(L, elemento);
+    }
    return L;
 }
 
