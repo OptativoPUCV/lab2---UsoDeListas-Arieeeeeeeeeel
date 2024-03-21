@@ -25,3 +25,17 @@ Thu 21 Mar 2024 08:48:53 PM UTC:
  tests:  2|3
 total_score: 20/70
 e208f59
+Thu 21 Mar 2024 09:04:47 PM UTC: 
+ exercises.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘eliminaElementos’:
+exercises.c:86:12: error: assignment to ‘int’ from ‘void *’ makes integer from pointer without a cast [-Werror=int-conversion]
+   86 |       *num = popCurrent(L);
+      |            ^
+exercises.c:87:12: error: assignment to ‘int’ from ‘void *’ makes integer from pointer without a cast [-Werror=int-conversion]
+   87 |       *num = next(L);
+      |            ^
+cc1: all warnings being treated as errors
+Compilation failed
+f67ea57
