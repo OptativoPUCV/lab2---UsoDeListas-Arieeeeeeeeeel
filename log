@@ -112,3 +112,28 @@ exercises.c:125:19: error: initialization of ‘char’ from ‘void *’ makes 
 cc1: all warnings being treated as errors
 Compilation failed
 24fd43b
+Sat 23 Mar 2024 03:11:02 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:118:24: error: passing argument 2 of ‘push’ makes pointer from integer without a cast [-Werror=int-conversion]
+  118 |       push(pila, cadena[i]);
+      |                  ~~~~~~^~~
+      |                        |
+      |                        char
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:31: note: expected ‘void *’ but argument is of type ‘char’
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+In file included from test.c:5:
+exercises.c:122:9: error: implicit declaration of function ‘isEmpty’ [-Werror=implicit-function-declaration]
+  122 |     if (isEmpty(pila)){
+      |         ^~~~~~~
+exercises.c:125:19: error: initialization of ‘char’ from ‘void *’ makes integer from pointer without a cast [-Werror=int-conversion]
+  125 |     char ultimo = pop(pila);
+      |                   ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+60d3e13
