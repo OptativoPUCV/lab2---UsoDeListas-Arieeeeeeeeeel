@@ -137,3 +137,33 @@ exercises.c:125:19: error: initialization of ‘char’ from ‘void *’ makes 
 cc1: all warnings being treated as errors
 Compilation failed
 60d3e13
+Sat 23 Mar 2024 03:12:28 PM UTC: 
+ exercises.c | 14 ++++++--------
+ 1 file changed, 6 insertions(+), 8 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:114:17: error: implicit declaration of function ‘createStack’; did you mean ‘create_stack’? [-Werror=implicit-function-declaration]
+  114 |   Stack* pila = createStack(strlen(cadena));
+      |                 ^~~~~~~~~~~
+      |                 create_stack
+exercises.c:114:17: error: initialization of ‘Stack *’ {aka ‘List *’} from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+exercises.c:118:32: error: passing argument 2 of ‘push’ makes pointer from integer without a cast [-Werror=int-conversion]
+  118 |               push(pila, cadena[i]);
+      |                          ~~~~~~^~~
+      |                                |
+      |                                char
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:31: note: expected ‘void *’ but argument is of type ‘char’
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+In file included from test.c:5:
+exercises.c:120:19: error: implicit declaration of function ‘isEmpty’ [-Werror=implicit-function-declaration]
+  120 |               if (isEmpty(pila)) {
+      |                   ^~~~~~~
+exercises.c:123:29: error: initialization of ‘char’ from ‘void *’ makes integer from pointer without a cast [-Werror=int-conversion]
+  123 |               char ultimo = pop(pila);
+      |                             ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+afd78a3
