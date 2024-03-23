@@ -100,6 +100,7 @@ Puedes usar una pila auxiliar.
 */
 
 void copia_pila(Stack* P1, Stack* P2) {
+
 }
 
 /*
@@ -110,6 +111,30 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 */
 
 int parentesisBalanceados(char *cadena) {
-   return 0;
+  Stack* pila = createStack(cadena);
+
+  for (int i = 0; cadena[i] != '\0'; i++){
+    if (cadena[i] == '(' || cadena[i] == '{' || cadena[i] || == '['){
+      push(pila, cadena[i]);
+    }
+    else if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}') {
+    }
+    if (isEmpty(pila)){
+      return 0;
+    }
+    char ultimo = pop(pila);
+    if ((cadena[i] == ')' && ultimo != '(') ||
+        (cadena[i] == ']' && ultimo != '[') ||
+        (cadena[i] == '}' && ultimo != '{')) {
+        return 0;
+    }
+  }
+  if (isEmpty(pila)){
+    return 0;
+  }
+  else{
+    return 1;
+  }
 }
+
 
